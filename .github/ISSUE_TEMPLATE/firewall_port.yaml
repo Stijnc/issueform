@@ -90,7 +90,7 @@ body:
   - type: checkboxes
     id: validation
     attributes:
-      label: Code of Conduct
+      label: I confirm all input is validated
       description: By submitting this issue, you confirm all IP addresses and/or CIDR ranges are correct
       options:
         - label: I have validated the request input
