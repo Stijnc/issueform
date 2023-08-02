@@ -1,6 +1,6 @@
 name: Firewall Change request
 description: Request a firewall change
-title: "[FW]: "
+title: "[FW]: Firewall network rule change request"
 labels: ["FW", "triage", "IaC", "networkrule"]
 assignees:
   - stijnc
@@ -63,6 +63,7 @@ body:
     attributes:
       label: Network protocols.
       description: Network protocols.
+      multiple: true
       options:
         - Any
         - ICMP
@@ -77,7 +78,7 @@ body:
       description: Do you have additional info to share??
       placeholder: Any additional info that might be helpful (documentation, CR's...)e!
     validations:
-      required: true
+      required: false
   - type: input
     id: nwrule_contact
     attributes:
