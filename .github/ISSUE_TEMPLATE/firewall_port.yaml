@@ -1,5 +1,5 @@
-name: Firewall Change request
-description: Request a firewall change
+name: Firewall Network rule
+description: Request a firewall Network Rule change
 title: "[FW]: Firewall network rule change request"
 labels: ["FW", "triage", "IaC", "networkrule"]
 assignees:
