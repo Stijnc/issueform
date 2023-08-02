@@ -1,0 +1,96 @@
+name: Firewall Change request
+description: Request a firewall change
+title: "[FW]: "
+labels: ["FW", "triage", "IaC", "networkrule"]
+assignees:
+  - stijnc
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this firewall Network rule change request !
+  - type: dropdown
+    id: nwrule_type
+    attributes:
+      label: The type of firewall rule
+      description: The rule type to create
+      options:
+        - NetworkRule
+    validations:
+      required: true
+  - type: input
+    id: nwrule_name
+    attributes:
+      label: The name of the rule
+      description: The name of the rule?
+      placeholder: ex. IncomingMgmtRDP
+    validations:
+      required: true
+  - type: input
+    id: nwrule_description
+    attributes:
+      label: The description of the rule
+      description: The description of the rule?
+      placeholder: ex. Rule allows incoming RDP of the managenent plane (AVD hosts)
+    validations:
+      required: true
+  - type: input
+    id: nwrule_sourceAddress
+    attributes:
+      label: Source Address(es)
+      description: A list of source IP addresses for this rule
+      placeholder: comma seperated list of source addresses
+    validations:
+      required: true
+  - type: input
+    id: nwrule_destinationAddress
+    attributes:
+      label: Destination Address(es)
+      description: A list of destination IP addresses or service tags for this rule
+      placeholder: comma seperated list of destination addresses or service tags. ex. "10.8.0.0/25"
+    validations:
+      required: true
+  - type: input
+    id: nwrule_destinationPorts
+    attributes:
+      label: Destination ports
+      description: A list of destination ports.
+      placeholder: comma seperated list of destination ports. ex. 3389
+    validations:
+      required: true
+  - type: dropdown
+    id: nwrule_protocols
+    attributes:
+      label: Network protocols.
+      description: Network protocols.
+      options:
+        - Any
+        - ICMP
+        - TCP
+        - UDP
+    validations:
+      required: true
+  - type: textarea
+    id: nwrule_additionalinfo
+    attributes:
+      label: Additional info?
+      description: Do you have additional info to share??
+      placeholder: Any additional info that might be helpful (documentation, CR's...)e!
+    validations:
+      required: true
+  - type: input
+    id: nwrule_contact
+    attributes:
+      label: Contact info
+      description: if we need additional info, how can we contact you?
+      placeholder: ex. firstname.lastname@company.be
+    validations:
+      required: true
+  - type: checkboxes
+    id: validation
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you confirm all IP addresses and/or CIDR ranges are correct
+      options:
+        - label: I have validated the request input
+          required: true
